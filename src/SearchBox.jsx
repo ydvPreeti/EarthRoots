@@ -12,7 +12,7 @@ export default function SearchBox({ updateInfo }) {
     let [error, setError] = useState(false);
 
     let getOriginInfo = async () => {
-        let response = await fetch(`${import.meta.env.VITE_API_URL}?q=${city}&appid=${import.meta.env.VITE_API_KEY}&units=metric`);
+        let response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${import.meta.env.VITE_API_KEY}&units=metric`);
 
         let jsonResponse = await response.json();
 
