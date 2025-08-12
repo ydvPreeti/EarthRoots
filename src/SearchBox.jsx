@@ -12,7 +12,8 @@ export default function SearchBox({ updateInfo }) {
     let [error, setError] = useState(false);
 
     let getOriginInfo = async () => {
-        let response = await fetch(`${apiUrl}?q=${city}&appid=${apiKey}&units=metric`);
+        let response = await fetch(`${import.meta.env.VITE_API_URL}?q=${city}&appid=${import.meta.env.VITE_API_KEY}&units=metric`);
+
         let jsonResponse = await response.json();
 
         // Handle no results
