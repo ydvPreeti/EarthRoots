@@ -118,7 +118,7 @@ export default function SearchBox({ updateInfo }) {
         origin: "*",
       });
 
-      const res = await fetch(https://en.wikipedia.org/w/api.php?${searchParams.toString()});
+      const res = await fetch("https://en.wikipedia.org/w/api.php?${searchParams.toString()}");
       const data = await res.json();
       const pages = data?.query?.pages || [];
 
@@ -139,7 +139,7 @@ export default function SearchBox({ updateInfo }) {
           redirects: "",
           origin: "*",
         });
-        const res2 = await fetch(https://en.wikipedia.org/w/api.php?${byTitleParams.toString()});
+        const res2 = await fetch("https://en.wikipedia.org/w/api.php?${byTitleParams.toString()}");
         const data2 = await res2.json();
         const pages2 = data2?.query?.pages || [];
 
@@ -155,7 +155,7 @@ export default function SearchBox({ updateInfo }) {
   };
 
   const getOriginInfo = async () => {
-    const response = await fetch(https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}&units=metric);
+    const response = await fetch("https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}&units=metric");
     const jsonResponse = await response.json();
 
     if (!jsonResponse || jsonResponse.length === 0) {
